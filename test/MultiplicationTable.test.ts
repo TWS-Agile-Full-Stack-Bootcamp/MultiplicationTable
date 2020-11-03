@@ -7,4 +7,7 @@ describe('Multiplication Table', () => {
   it('should not render multiplication table of (2, 1)', () => {
     expect(new MultiplicationTable().render(2, 1)).toBe('')
   })
+  it('should not render multiplication table of (1, 11)', () => {
+    expect(new MultiplicationTable().render(1, 11)).toBe('')
+  })
 })
