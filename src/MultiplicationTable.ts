@@ -1,7 +1,7 @@
 interface Expression {
-  addon1: number
-  addon2: number
-  sum: number
+  factor1: number
+  factor2: number
+  product: number
 }
 
 export class MultiplicationTable {
@@ -10,9 +10,9 @@ export class MultiplicationTable {
     for (let row = 0; row <= (end - start); row++) {
       const rowExpresson = []
       for (let col = 0; col <= row; col++) {
-        const addon1 = col + start
-        const addon2 = row + start
-        rowExpresson.push({addon1, addon2, sum: addon1*addon2})
+        const factor1 = col + start
+        const factor2 = row + start
+        rowExpresson.push({factor1, factor2, product: factor1*factor2})
       }
       expressions.push(rowExpresson)
     }
@@ -22,9 +22,9 @@ export class MultiplicationTable {
   renderExpressions = (start: number, end: number, expressions: Expression[][]) => {
     const width = Array(end - start + 1).fill(0)
     return expressions.reverse().map((row: Expression[]) => row
-      .map(({addon1, addon2, sum}: Expression) => {
-        const expression = `${addon1}*${addon2}=${sum}`
-        const col = addon1 - start
+      .map(({factor1, factor2, product}: Expression) => {
+        const expression = `${factor1}*${factor2}=${product}`
+        const col = factor1 - start
         width[col] = Math.max(width[col], expression.length)
         const spacing = ' '.repeat(width[col] - expression.length)
         return expression + spacing
