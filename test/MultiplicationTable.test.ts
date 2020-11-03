@@ -16,4 +16,8 @@ describe('Multiplication Table', () => {
   it('should render noting when start greater than end', () => {
     expect(new MultiplicationTable().render(1, 0)).toBe('nothing')
   })
+
+  it('should render multiplication table of (2, 4)', () => {
+    expect(new MultiplicationTable().render(2, 4)).toBe(`2*2=4\n2*3=6\t3*3=9\n2*4=8\t3*4=12\t4*4=16`)
+  })
 })
