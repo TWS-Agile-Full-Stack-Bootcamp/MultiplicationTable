@@ -3,6 +3,9 @@ export class MultiplicationTable {
     if (!this.isStartNumberLessThanOrEqualsToEndNumber(start, end)) {
       return '';
     }
+    if (!this.isInRangeOfOneToTen(start, end)) {
+      return 'number should in range of 1 to 10';
+    }
     return this.renderMultiplicationTable(start, end);
   }
 

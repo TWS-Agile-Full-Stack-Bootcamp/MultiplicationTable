@@ -17,6 +17,14 @@ describe('Multiplication Table', () => {
     expect(new MultiplicationTable().render(2, 1)).toBe('');
   })
 
+  it('should return message given render when start number not in range of 1 to 10', () => {
+    expect(new MultiplicationTable().render(0, 1)).toBe('number should in range of 1 to 10');
+  })
+
+  it('should return message given render when end number not in range of 1 to 10', () => {
+    expect(new MultiplicationTable().render(1, 11)).toBe('number should in range of 1 to 10');
+  })
+
   it('should return true when check given start number less than end number', () => {
     expect(new MultiplicationTable().isStartNumberLessThanOrEqualsToEndNumber(1, 2)).toBeTruthy();
   })
