@@ -1,14 +1,24 @@
 export class MultiplicationTable {
   isBetween1and10 = (target: number) => (target >= 1 && target <= 10)
 
+  buildExpressions = (start: number, end: number) => {
+    const expressions = []
+    for (let row = 0; row <= (end - start); row++) {
+      const rowExpresson = []
+      for (let col = 0; col <= row; col++) {
+        const addon1 = col + start
+        const addon2 = row + start
+        rowExpresson.push({addon1, addon2, sum: addon1*addon2})
+      }
+      expressions.push(rowExpresson)
+    }
+    return expressions
+  }
+
   render(start: number, end: number): string{
     if (start > end) return ''
     if (!this.isBetween1and10(start) || !this.isBetween1and10(end)) return ''
-    const expressions = [
-      [{addon1: 2, addon2: 2, sum: 4}],
-      [{addon1: 2, addon2: 3, sum: 6}, {addon1: 3, addon2: 3, sum: 9}],
-      [{addon1: 2, addon2: 4, sum: 8}, {addon1: 3, addon2: 4, sum: 12}, {addon1: 4, addon2: 4, sum: 16}]
-    ]
+    const expressions = this.buildExpressions(start, end)
     const rendered = expressions.map(row => row
       .map(({addon1, addon2, sum}) => `${addon1}*${addon2}=${sum}`)
       .join('  ')

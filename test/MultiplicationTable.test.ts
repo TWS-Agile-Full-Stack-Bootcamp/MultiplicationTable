@@ -25,7 +25,7 @@ describe('Multiplication Table', () => {
     //then
     expect(rendered).toBe('')
   })
-  it('should return empty when render multiplication table of (2, 4)', () => {
+  it('should return table when render multiplication table of (2, 4)', () => {
     // given
     const table = new MultiplicationTable()
     const start = 2
