@@ -12,4 +12,8 @@ describe('Multiplication Table', () => {
   it('should return true when check given start number equals to end number', () => {
     expect(new MultiplicationTable().isStartNumberLessThanOrEqualsToEndNumber(1, 1)).toBeTruthy();
   })
+
+  it('should return true when check given start number larger than end number', () => {
+    expect(new MultiplicationTable().isStartNumberLessThanOrEqualsToEndNumber(2, 1)).toBeFalsy();
+  })
 })
