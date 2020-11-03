@@ -1,5 +1,8 @@
 export class MultiplicationTable {
   render(start: number, end: number): string{
+    if (!this.isStartNumberLessThanOrEqualsToEndNumber(start, end)) {
+      return '';
+    }
     return this.renderMultiplicationTable(start, end);
   }
 

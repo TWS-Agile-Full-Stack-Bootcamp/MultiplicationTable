@@ -13,6 +13,10 @@ describe('Multiplication Table', () => {
     expect(new MultiplicationTable().render(2, 4)).toBe(`2*2=4\n2*3=6 3*3=9\n2*4=8 3*4=12 4*4=16`);
   })
 
+  it('should return empty given render when start number larger than end number', () => {
+    expect(new MultiplicationTable().render(2, 1)).toBe('');
+  })
+
   it('should return true when check given start number less than end number', () => {
     expect(new MultiplicationTable().isStartNumberLessThanOrEqualsToEndNumber(1, 2)).toBeTruthy();
   })
