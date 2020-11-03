@@ -1,6 +1,6 @@
 export class MultiplicationTable {
   render(start: number, end: number): string{
-    return '1*1=1'
+    return this.renderMultiplicationTable(start, end);
   }
 
   isStartNumberLessThanOrEqualsToEndNumber(start: number, end: number): boolean{

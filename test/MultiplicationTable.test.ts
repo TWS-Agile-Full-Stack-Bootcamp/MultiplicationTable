@@ -5,6 +5,14 @@ describe('Multiplication Table', () => {
     expect(new MultiplicationTable().render(1, 1)).toBe('1*1=1')
   })
 
+  it('should render multiplication table of (1, 2)', () => {
+    expect(new MultiplicationTable().render(1, 2)).toBe(`1*1=1\n1*2=2 2*2=4`);
+  })
+  
+  it('should render multiplication table of (2, 4)', () => {
+    expect(new MultiplicationTable().render(2, 4)).toBe(`2*2=4\n2*3=6 3*3=9\n2*4=8 3*4=12 4*4=16`);
+  })
+
   it('should return true when check given start number less than end number', () => {
     expect(new MultiplicationTable().isStartNumberLessThanOrEqualsToEndNumber(1, 2)).toBeTruthy();
   })
