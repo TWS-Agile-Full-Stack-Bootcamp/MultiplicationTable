@@ -5,6 +5,10 @@ export class MultiplicationTable {
       return 'nothing'
     }
 
+    if (start > 9 || end > 9) {
+      return 'start or end should less than 10'
+    }
+
     return '1*1=1'
   }
 }
