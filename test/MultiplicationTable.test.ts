@@ -16,4 +16,13 @@ describe('Multiplication Table', () => {
   it('should return true when check given start number larger than end number', () => {
     expect(new MultiplicationTable().isStartNumberLessThanOrEqualsToEndNumber(2, 1)).toBeFalsy();
   })
+
+  it('should return true when check given both start number and end number in range of 1 to 10', () => {
+    expect(new MultiplicationTable().isInRangeOfOneToTen(1, 1)).toBeTruthy();
+  })
+
+  it('should return true when check given either start number or end number not in range of 1 to 10', () => {
+    expect(new MultiplicationTable().isInRangeOfOneToTen(0, 1)).toBeFalsy();
+    expect(new MultiplicationTable().isInRangeOfOneToTen(1, 11)).toBeFalsy();
+  })
 })

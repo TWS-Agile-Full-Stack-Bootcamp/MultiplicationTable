@@ -7,4 +7,8 @@ export class MultiplicationTable {
     return start <= end
   }
 
+  isInRangeOfOneToTen(start: number, end: number): boolean{
+    return 1<= start && start <=10 && 1<= end && end <=10;
+  }
+  
 }
