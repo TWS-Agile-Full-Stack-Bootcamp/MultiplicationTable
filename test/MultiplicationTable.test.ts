@@ -25,4 +25,12 @@ describe('Multiplication Table', () => {
     expect(new MultiplicationTable().isInRangeOfOneToTen(0, 1)).toBeFalsy();
     expect(new MultiplicationTable().isInRangeOfOneToTen(1, 11)).toBeFalsy();
   })
+
+  it('should render multiplication table of (1, 2)', () => {
+    expect(new MultiplicationTable().renderMultiplicationTable(1, 2)).toBe(`1*1=1\n1*2=2 2*2=4`);
+  })
+
+  it('should render multiplication table of (2, 4)', () => {
+    expect(new MultiplicationTable().renderMultiplicationTable(2, 4)).toBe(`2*2=4\n2*3=6 3*3=9\n2*4=8 3*4=12 4*4=16`);
+  })
 })
