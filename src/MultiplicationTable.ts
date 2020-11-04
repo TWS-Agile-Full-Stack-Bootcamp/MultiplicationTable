@@ -4,20 +4,16 @@ interface Expression {
   product: number
 }
 
+const range = (n: number) => [...Array(n).keys()]
+
 export class MultiplicationTable {
-  buildExpressions = (start: number, end: number) => {
-    const expressions = []
-    for (let row = 0; row <= (end - start); row++) {
-      const rowExpresson = []
-      for (let col = 0; col <= row; col++) {
-        const factor1 = col + start
-        const factor2 = row + start
-        rowExpresson.push({factor1, factor2, product: factor1*factor2})
-      }
-      expressions.push(rowExpresson)
-    }
-    return expressions
-  }
+  buildExpressions = (start: number, end: number) => range(end - start + 1)
+    .map(row => range(row + 1)
+      .map(col => ({
+        factor1: col + start,
+        factor2: row + start,
+        product: (col + start) * (row + start)
+      })))
 
   renderExpressions = (start: number, end: number, expressions: Expression[][]) => {
     const width = Array(end - start + 1).fill(0)
